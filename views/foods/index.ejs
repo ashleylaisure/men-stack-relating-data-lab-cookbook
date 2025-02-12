@@ -16,7 +16,12 @@
         <% if (pantry.length >= 1 ) {%>
             <ul>
                 <% pantry.forEach((pantry) => { %>
-                    <li><%= pantry.name %></li>
+                    <li>
+                        <a href="/users/<%= user._id %>/foods/<%= pantry._id %>">
+                            <%= pantry.name %>
+                        </a>
+                        
+                    </li>
                 <% }) %>
             </ul>
         <% } else { %> 
