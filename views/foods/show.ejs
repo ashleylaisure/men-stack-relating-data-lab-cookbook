@@ -10,7 +10,9 @@
         <%- include('../partials/_navbar.ejs') %>
 
         <h1><%= pantry.name %></h1>
-
+        <div>
+            <a href="/users/<%= user._id %>/foods/<%= pantry._id %>/edit">Edit this Item</a>
+        </div>
         <form action="/users/<%= user._id %>/foods/<%= pantry._id %>?_method=DELETE" method="POST">
             <button type="submit">Delete from Pantry</button>
         </form>
