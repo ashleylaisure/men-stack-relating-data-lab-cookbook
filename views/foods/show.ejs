@@ -11,5 +11,9 @@
 
         <h1><%= pantry.name %></h1>
 
+        <form action="/users/<%= user._id %>/foods/<%= pantry._id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete from Pantry</button>
+        </form>
+
     </body>
 </html>
