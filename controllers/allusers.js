@@ -19,13 +19,13 @@ router.get('/', async (req, res) => {
     }
 });
 
-// SHOW
-router.get('/allUsersId', async (req, res) => {
+// SHOW All users Pantry Index
+router.get('/:userId', async (req, res) => {
     try {
         const allUser = await User.findById(req.session.user._id);
         const pantry = allUser.pantry.id(req.params.pantryId);
         res.render('allusers/show.ejs', {
-            users : allUser,
+            pantry : pantry,
         });
     } catch (error) {
         console.log(error);
