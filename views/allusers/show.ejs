@@ -10,19 +10,14 @@
         <%- include('../partials/_navbar.ejs') %>
 
         <h1><%=user.username  %>'s Pantry</h1>
-        
-        <% if (pantry.length >= 1 ) {%>
-            <ul>
-                <% pantry.forEach((pantry) => { %>
-                    <li>
-                        <%=pantry.name  %>
-                    </li>
 
-                <% }) %>
-            </ul>
-        <% } else { %> 
-            <h1>There are no items in this pantry</h1>
-        <% } %>
-
+        <ul>
+            <% user.pantry.forEach((pantry) => { %>
+                <li>
+                        <%= pantry.name %>
+                    
+                </li>
+            <% }) %>
+        </ul>
     </body>
 </html>

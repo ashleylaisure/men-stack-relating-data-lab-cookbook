@@ -23,14 +23,15 @@ router.get('/', async (req, res) => {
 router.get('/:userId', async (req, res) => {
     try {
         const allUser = await User.findById(req.session.user._id);
-        const pantry = allUser.pantry.id(req.params.pantryId);
+        const foundPantry = allUser.pantry.id(req.params.userId);
         res.render('allusers/show.ejs', {
-            pantry : pantry,
+            user : allUser,
+            pantry : foundPantry,
         });
     } catch (error) {
         console.log(error);
         res.redirect('/')
     }
-})
+});
 
 module.exports = router;
